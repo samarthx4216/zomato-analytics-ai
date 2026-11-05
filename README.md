@@ -1,6 +1,6 @@
 # Zomato AI Data Engineering Pipeline
 
-> Built by **[Your Name]** · [LinkedIn](https://linkedin.com/in/your-profile) · [GitHub](https://github.com/your-username) · [Email](mailto:your-email@example.com)
+> Built by **Samarth Marathe** · [LinkedIn](https://www.linkedin.com/in/samarthmarathe/) · [GitHub](https://github.com/samarthx4216) · [Email](samarthmarathe39@gmail.com)
 
 I built an end-to-end batch data pipeline that takes Zomato-style food delivery data from raw CSVs all the way to AI-powered analytics:
 
