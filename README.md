@@ -8,14 +8,6 @@ I built an end-to-end batch data pipeline that takes Zomato-style food delivery 
 
 The data lands in an S3 data lake and flows into Snowflake through a storage integration. dbt then transforms it through medallion layers: RAW (Bronze) tables loaded with `COPY INTO`, cleaned STAGING (Silver) views, and business-ready MARTS (Gold) with dimensions, incremental facts, and aggregate marts. Apache Airflow orchestrates everything as one daily DAG. On top of the warehouse I added an AI layer powered by Groq's fast LLM inference: LLM enrichment turns free-text reviews into structured columns, RAG lets me chat with the reviews, and text-to-SQL lets me query the warehouse in plain English. Streamlit serves the AI apps.
 
-![Architecture](docs/architecture.png)
-
-## Why I built this
-
-[Write 2-3 sentences in your own words. Example: "I wanted hands-on experience with the modern data stack used in real companies, instead of only learning each tool in isolation. This project let me connect cloud storage, a warehouse, transformations, orchestration, and AI in one working pipeline."]
-
-## What I built
-
 | Layer | Where | What |
 |---|---|---|
 | **Source** | `data/` (local) | 4 real dimension CSVs (restaurants, users, food, menu) + 3 generated fact files: **10M orders**, **~23M order items**, **300K free-text reviews** |
@@ -143,10 +135,5 @@ streamlit run ai/rag_chat.py      # chat with reviews
 streamlit run ai/text_to_sql.py   # chat with the warehouse
 ```
 
-## Future improvements
 
-- [Add your own ideas, e.g., a BI dashboard on top of the marts, CI for dbt tests, data quality alerts, cost monitoring]
 
-## Dataset
-
-Download the CSVs from this [Google Drive folder](https://drive.google.com/drive/folders/1FEnGWMHhHzzTUCZOw1-YnH2v3DMuM-rs?usp=sharing) and place them under `data/` (they are too large to commit).
